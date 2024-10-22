@@ -1,6 +1,8 @@
-.heron{
+.formulas{
     display: flex;
     flex-direction:column;
+    justify-content: space-evenly;
     height: 100px;
     width: 100px;
 }
+

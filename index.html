@@ -6,22 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css"> 
-    <script src="formulas.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-    <div class="heron">
-        <h1>Heron's Formula</h1>     
-        <form> 
-            <label for="sideA">Side a:</label>
-            <Input type="number" id="sideA" name="sides"value="0"></Input>
-            <label for="sideB">Side b:</label>
-            <Input type="number" id="sideB" name="sides"value="0"></Input>
-            <label for="sideC">Side c:</label>
-            <Input type="number" id="sideC" name="sides"value="0"></Input>
-            <label for="result">Area:</label>
-            <Input type="text" id="result" name="sides"value=" "readonly></Input>
-
-        </form>
+    <div class="formulas">
+        <div class="heron">
+            <h1>Heron's Formula</h1>     
+            <form> 
+                <label for="sideA">Side A:</label>
+                <Input type="number" id="sideA" name="sides"value="0"></Input>
+                <label for="sideB">Side B:</label>
+                <Input type="number" id="sideB" name="sides"value="0"></Input>
+                <label for="sideC">Side C:</label>
+                <Input type="number" id="sideC" name="sides"value="0"></Input>
+                <label for="result">Area:</label>
+                <Input type="text" id="result" name="sides"value=" "readonly></Input>
+            </form>
+        </div>
+        <div class="ambCase">
+            <h1>Ambiguous Case</h1>     
+            <label for="sideA">Side A:</label>
+                <Input type="number" id="sideA" name="sides"value="0"></Input>
+                <label for="sideB">Side B:</label>
+                <Input type="number" id="sideB" name="sides"value="0"></Input>
+                <label for="sideC">Side C:</label>
+                <Input type="number" id="sideC" name="sides"value="0"></Input>
+                <label for="result"># of triangles:</label>
+                <Input type="text" id="result" name="sides"value=" "readonly></Input>
+        </div>
+        <div class="newton">
+            <h1>Newton's Method</h1>     
+            <label for="sideA">g(root guess):</label>
+                <Input type="number" id="sideA" name="sides"value="0"></Input>
+                <label for="result"># of triangles:</label>
+                <Input type="text" id="result" name="sides"value=" "readonly></Input>
+        </div>
     </div>
 </body>
 </html>
