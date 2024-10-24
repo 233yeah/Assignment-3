@@ -6,17 +6,40 @@ function heronf(a,b,c){
 }
 let area = heronf(sideAh,sideBh,sideCh);
 console.log(area);
+console.log(Math.round((area*100))/100);
 
 let sideAac=2;
 let sideBac=2;
 let angleAac=2;
 function ambf(a,b,angle){
-    angle = angle*180/Math.PI
-    console.log(angle);
-    let h = b*Math.sin(angle)
-    if(h<a<b){
-        return("There are two triangles")
+    let h = b*Math.sin(angle*(Math.PI/180));
+    console.log(h);
+    console.log(a);
+    console.log(b);
+
+    if(angle<180){
+        if(a==h){
+            return("Right Triangle.")
+        }
+        else if(a>b){
+            return("Acute. There is one triangle")
+        }
+        else if(h>a){
+            return("No triangle")
+        }
+        else {
+            return("Acute. There are two triangles")
+        }
     }
+    else{
+        if(a==(h*-1) || a<b){
+            return("No triangle")
+        }
+        else{
+            return("Obtuse. One triangle")
+        }
+    }
+
     return 
 }
-console.log(ambf(0.5,1,1));
+console.log(ambf(5.209445330007909,30,170));
