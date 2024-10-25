@@ -1,6 +1,6 @@
-let sideAh=2;
-let sideBh=2;
-let sideCh=2;
+const sideAh = document.getElementById("sideAh");
+const sideBh = document.getElementById("sideBh");
+const sideCh = document.getElementById("sideCh");
 function heronf(a,b,c){
     return (1/4)*(Math.sqrt(4*Math.pow(a,2)*Math.pow(b,2)-(Math.pow((Math.pow(a,2)+Math.pow(b,2)-Math.pow(c,2)),2))))
 }
@@ -11,12 +11,9 @@ console.log(Math.round((area*100))/100);
 let sideAac=2;
 let sideBac=2;
 let angleAac=2;
+
 function ambf(a,b,angle){
     let h = b*Math.sin(angle*(Math.PI/180));
-    console.log(h);
-    console.log(a);
-    console.log(b);
-
     if(angle<180){
         if(a==h){
             return("Right Triangle.")
@@ -39,7 +36,17 @@ function ambf(a,b,angle){
             return("Obtuse. One triangle")
         }
     }
-
-    return 
 }
-console.log(ambf(5.209445330007909,30,170));
+
+    function newton(g){
+        let x1=0;
+        do while(Math.abs(g-x1)<0.0001){
+        x1=g-((6*Math.pow(g,4)-(13*Math.pow(g,3))-(18*Math.pow(g,2))+(7*g)+6)/(24*Math.pow(g,3)-(39*Math.pow(g,2))-(36*g)+7));
+        g=x1;
+    }
+    }
+    console.log(newton(1));
+
+    function poly(c,e,x){
+
+    }
