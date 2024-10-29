@@ -48,11 +48,8 @@ function ambf(a,b,angle){
             const b = parseFloat(document.getElementById("sideBh").value);
             const c = parseFloat(document.getElementById("sideCh").value);
             const area = heronf(a, b, c);
-            if(a!=0||b!=0||c!=0){
-                document.getElementById("resultH").value = Math.round(area * 100) / 100;}  
-            else{ 
-                document.getElementById("resultH").value = "please enter a number in each field";}
-        });
+                document.getElementById("resultH").value = Math.round(area * 100) / 100;}            
+        );
 
         const abutton = document.getElementById("ambButton");
             abutton.addEventListener("click", function() {
