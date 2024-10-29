@@ -1,4 +1,3 @@
-
 function heronf(a,b,c){
     return (1/4)*(Math.sqrt(4*Math.pow(a,2)*Math.pow(b,2)-(Math.pow((Math.pow(a,2)+Math.pow(b,2)-Math.pow(c,2)),2))))
 }
@@ -40,7 +39,38 @@ function ambf(a,b,angle){
       }
     return (x1);
     }
+    function polynomial(c,x,e){
+        let cArray=c.split(" ");
+        let eArray=e.split(" ");
+        let equation=[];
+        let returnVal=[];
+        let xVal=0;
+        if(cArray.length!=eArray.length){
+            return("Please put an equal amount of cofficients and exponents")
+        }
+        for (let i = 0;i<cArray.length;i++){
+            if(i==0){
+                equation [i]= cArray[i]+"x^"+eArray[i]+" ";
+                xVal+=parseInt(cArray[i])*(Math.pow(x,parseInt(eArray[i])));
+            }
+                
+            else{
+                if(parseInt(cArray[i]) > 0){
+                    equation [i]= "+ "+cArray[i]+"x^"+eArray[i]+" ";
+                    xVal+=parseInt(cArray[i])*(Math.pow(x,parseInt(eArray[i])))
+                }
+                else if(parseInt(cArray[i])<0){
+                    equation [i]= "- "+cArray[i]+"x^"+eArray[i]+" ";
+                    xVal+=parseInt(cArray[i])*(Math.pow(x,parseInt(eArray[i])))
+                }
+            }
+        }
+        
+        returnVal[0]=equation.join("").toString();
+        returnVal[1]=(xVal.toString());
+        return(returnVal);
 
+    }
     document.addEventListener("DOMContentLoaded", function() {
         const hbutton = document.getElementById("heronButton");
         hbutton.addEventListener("click", function() {
@@ -48,8 +78,8 @@ function ambf(a,b,angle){
             const b = parseFloat(document.getElementById("sideBh").value);
             const c = parseFloat(document.getElementById("sideCh").value);
             const area = heronf(a, b, c);
-                document.getElementById("resultH").value = Math.round(area * 100) / 100;}            
-        );
+            document.getElementById("resultH").value = Math.round(area * 100) / 100;}  
+         );
 
         const abutton = document.getElementById("ambButton");
             abutton.addEventListener("click", function() {
@@ -62,6 +92,21 @@ function ambf(a,b,angle){
             newButton.addEventListener("click", function() {
             const guess = parseFloat(document.getElementById("guess").value);
             document.getElementById("resultN").value =  newton(guess);  });
+        
+        const polyButton = document.getElementById("polyButton");
+            polyButton.addEventListener("click", function() {
+            const coff = String(document.getElementById("cofficients").value);
+            const expo = String(document.getElementById("exponents").value);
+            const xs = String(document.getElementById("xVal").value);
+            document.getElementById("resultPf").value =  polynomial(coff,xs,expo)[0];  
+            document.getElementById("resultPe").value =  polynomial(coff,xs,expo)[1];  
 
-        });
+                
+            
+        
+        }
+        );
+
+        }
+        );
    
