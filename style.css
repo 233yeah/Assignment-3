@@ -1,5 +1,4 @@
-
- /* Basic Reset */
+/* Basic Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,11 +16,15 @@ body {
 .formulas {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between sections */
+    gap: 20px;
+    /* Space between sections */
 }
 
 /* Section styling */
-.heron, .ambCase, .newton, .polynomial {
+.heron,
+.ambCase,
+.newton,
+.polynomial {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -32,7 +35,8 @@ body {
 h1 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #b90909; /* Accent color for headings */
+    color: #b90909;
+    /* Accent color for headings */
 }
 
 /* Form elements */
@@ -44,11 +48,13 @@ label {
 
 input[type="number"],
 input[type="text"] {
-    width: calc(100% - 10px); /* Full width minus padding */
+    width: calc(100% - 10px);
+    /* Full width minus padding */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-bottom: 15px; /* Space below inputs */
+    margin-bottom: 15px;
+    /* Space below inputs */
 }
 
 /* Readonly input styling */
@@ -69,7 +75,8 @@ button {
 }
 
 button:hover {
-    background-color: #7e1131; /* Darker shade on hover */
+    background-color: #7e1131;
+    /* Darker shade on hover */
 }
 
 /* Responsive styling */
@@ -77,11 +84,15 @@ button:hover {
     .formulas {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between; /* Align sections evenly */
+        justify-content: space-between;
+        /* Align sections evenly */
     }
 
-    .heron, .ambCase, .newton, .polynomial {
-        flex: 1 1 calc(45% - 20px); /* Two columns layout */
+    .heron,
+    .ambCase,
+    .newton,
+    .polynomial {
+        flex: 1 1 calc(45% - 20px);
+        /* Two columns layout */
     }
 }
-
