@@ -1,7 +1,11 @@
 function heronf(a, b, c) {
-    return 1 / 4 * (Math.sqrt(4 * Math.pow(a, 2) * Math.pow(b, 2) - (Math.pow((Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2)), 2))))
+    if (a < b + c||a<0||b<0||c<0) {
+        return Math.round((1 / 4 * (Math.sqrt(4 * Math.pow(a, 2) * Math.pow(b, 2) - (Math.pow((Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2)), 2)))))* 100 / 100).toString();
+    }
+    else {
+        return "Triangle does not exist"
+    }
 }
-
 function ambf(a, b, angle) {
     let h = b * Math.sin(angle * (Math.PI / 180));
     if (isNaN(a) || isNaN(b) || isNaN(angle) || a <= 0 || b <= 0 || angle <= 0) {
@@ -66,33 +70,32 @@ function polynomial(c, x, e) {
     }
 
     returnVal[0] = equation.join("").toString();
-    returnVal[1] = (xVal.toString());
+    returnVal[1] = ("f(x)= " + xVal.toString());
     return (returnVal);
 
 }
 
 const hbutton = document.getElementById("heronButton");
 hbutton.addEventListener("click", function () {
-    const a = parseFloat(document.getElementById("sideAh").value);
-    const b = parseFloat(document.getElementById("sideBh").value);
-    const c = parseFloat(document.getElementById("sideCh").value);
-    const area = heronf(a, b, c);
-    document.getElementById("resultH").value = Math.round(area * 100) / 100;
+    const a = parseFloat(document.getElementById("heronA").value);
+    const b = parseFloat(document.getElementById("heronB").value);
+    const c = parseFloat(document.getElementById("heronC").value);
+    document.getElementById("heronResult").value = heronf(a, b, c);;
 }
 );
 
 const abutton = document.getElementById("ambButton");
 abutton.addEventListener("click", function () {
-    const acase = parseFloat(document.getElementById("sideAac").value);
-    const bcase = parseFloat(document.getElementById("sideBac").value);
-    const ccase = parseFloat(document.getElementById("angleAac").value);
+    const acase = parseFloat(document.getElementById("ambiguousA").value);
+    const bcase = parseFloat(document.getElementById("ambiguousB").value);
+    const ccase = parseFloat(document.getElementById("ambiguousAngle").value);
     document.getElementById("resultAc").value = ambf(acase, bcase, ccase);
 });
 
 const newButton = document.getElementById("newButton");
 newButton.addEventListener("click", function () {
     const guess = parseFloat(document.getElementById("guess").value);
-    document.getElementById("resultN").value = newton(guess);
+    document.getElementById("resultN").value = Math.round(newton(guess) * 100) / 100;
 });
 
 const polyButton = document.getElementById("polyButton");
